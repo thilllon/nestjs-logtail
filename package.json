@@ -1,0 +1,102 @@
+{
+  "name": "nestjs-logtail",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "packageManager": "pnpm@7.22.0",
+  "author": {
+    "email": "thilllon970@gmail.com",
+    "name": "thilllon",
+    "url": "https://github.com/thilllon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thilllon/nestjs-logtail.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thilllon/nestjs-logtail/issues"
+  },
+  "contributors": [
+    {
+      "name": "thilllon",
+      "email": "thilllon970@gmail.com"
+    }
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:tsc": "tsc",
+    "dev": "tsx src/index.ts",
+    "format": "prettier --write --list-different .",
+    "lint": "eslint --fix .",
+    "prepare": "husky install && chmod +x .husky/*",
+    "_release": "pnpm format && pnpm lint && pnpm test && pnpm build && release-it",
+    "release": "release-it",
+    "start": "node dist/index.js",
+    "test": "jest"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "**/src/**/*": [
+      "prettier -w -l",
+      "eslint --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": "true"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.0",
+    "@commitlint/config-conventional": "^17.4.0",
+    "@nestjs/common": "^9.2.1",
+    "@nestjs/core": "^9.2.1",
+    "@nestjs/testing": "^9.2.1",
+    "@types/jest": "^29.2.5",
+    "@types/node": "^18.11.18",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "axios": "^1.2.2",
+    "commitizen": "^4.2.6",
+    "commitlint": "^17.4.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.26.0",
+    "git-cz": "^4.9.0",
+    "husky": "^8.0.3",
+    "jest": "^29.3.1",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.1",
+    "reflect-metadata": "^0.1.13",
+    "release-it": "^15.6.0",
+    "rxjs": "^7.8.0",
+    "tsup": "^6.5.0",
+    "tsx": "^3.12.1",
+    "typescript": "^4.9.4"
+  }
+}
